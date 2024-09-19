@@ -3,7 +3,6 @@ import torch
 import sys
 sys.path.insert(0, "src/")
 
-from utility.benchmarking_utility import evaluate_time
 from broadcast.data_utility import (
     to_homogeneous,
     from_homogeneous,

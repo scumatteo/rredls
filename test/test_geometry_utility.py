@@ -6,7 +6,6 @@ sys.path.insert(0, "src/")
 
 from broadcast.geometry_utility import (
     invert_transformation_matrices, compose_transformation_matrices, concatenate_transformations, compute_relative_transformations)
-from utility.benchmarking_utility import evaluate_time
 
 
 
