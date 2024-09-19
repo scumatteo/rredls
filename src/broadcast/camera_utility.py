@@ -43,7 +43,7 @@ def scale_intrinsic(K: torch.Tensor, scale_factor: float) -> torch.Tensor:
     assert K.shape == (
         3, 3), f"scale_intrinsic: intrinsic matrix must have shape (3, 3), got {K.shape}."
 
-    new_K = torch.eye(3)
+    new_K = torch.eye(3, device=K.device)
     new_K[:2, :] = K[:2, :] * scale_factor
     return new_K
 
