@@ -20,12 +20,11 @@ def invert_intrinsic(K: torch.Tensor) -> torch.Tensor:
         3, 3), f"invert_intrinsic: intrinsic matrix must have shape (3, 3), got {K.shape}."
 
     device = K.device
-    K_inv = torch.zeros_like(K, device=device)
+    K_inv = torch.eye(3, device=device)
     K_inv[0, 0] = 1. / K[0, 0]
-    K_inv[0, 2] = -K[0, 2] / K[0, 0]
     K_inv[1, 1] = 1. / K[1, 1]
+    K_inv[0, 2] = -K[0, 2] / K[0, 0]
     K_inv[1, 2] = -K[1, 2] / K[1, 1]
-    K_inv[2, 2] = 1.
 
     return K_inv
 
